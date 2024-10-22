@@ -8,14 +8,15 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "start": "node server/server.js",
-    "develop": "dev && npm start",
-    "watch": "nodemon . &npm run dev & npm run start"
+    "develop": "npm run dev && npm start",
+    "watch": "concurrently \"npm run dev\" \"npm run start\""
   },
   "dependencies": {
     "@apollo/client": "^3.11.8",
     "@apollo/server": "^4.11.0",
     "bcrypt": "^5.1.1",
     "concurrently": "^9.0.1",
+    "dotenv": "^16.4.5",
     "graphql": "^16.9.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
